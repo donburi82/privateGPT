@@ -3,6 +3,10 @@ background-color: black;
 color: beige;
 }
 
+button {
+  margin-right: 10px;
+}
+
 .chat-scroll{
   overflow-y: scroll;
   scrollbar-width: thin;

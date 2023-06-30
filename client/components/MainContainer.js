@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { FormControl, Stack,Spinner } from "react-bootstrap";
+import { FormControl, Stack, Spinner } from "react-bootstrap";
 import Image from "next/image";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 export default function MainContainer() {
   const [chat, setChat] = useState([]);
@@ -88,10 +88,17 @@ export default function MainContainer() {
                           ) : (
                             <Stack direction="vertical" gap={3}>
                               <span>{msg.msg}</span>
+                              <span style={{ fontSize: "14px" }}><i>Reference</i></span>
                               <span style={{ fontSize: "12px" }}>
-                                {msg.source != null && msg.source != ""
-                                  ? "Source: " + msg.source[0]["name"]
-                                  : ""}
+                                {msg.source.length>0
+                                  ? (msg.source.map((source) => (
+                                    <div>
+                                      <p><b>{source.name}</b></p>
+                                      <p>{source.content}</p>
+                                    </div>
+                                  )))
+                                  : ("")
+                                }
                               </span>
                             </Stack>
                           )}
@@ -111,9 +118,9 @@ export default function MainContainer() {
               style={{ color: "black" }}
             >
               <h1 className="mt-sm-5">
-                <small>PrivateGPT by SamurAI</small>
+                <small>For Internal Use</small>
               </h1>
-              <h3 style={{ color: "gray" }}>A better UI for PrivateGPT</h3>
+              <h3 style={{ color: "gray" }}>Original Code by SamurAI</h3>
             </Stack>
           )}
           {loading ? <Stack gap={2} direction="horizontal" className="loading">
