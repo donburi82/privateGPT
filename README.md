@@ -1,23 +1,24 @@
 # PrivateGPT
 
-Create a QnA chatbot on your documents without relying on the internet by utilizing the capabilities of local LLMs. Ensure complete privacy and security as none of your data ever leaves your local execution environment. Seamlessly process and inquire about your documents even without an internet connection. Inspired from [imartinez](https://github.com/imartinez)
-
-<img width="948" alt="pgpt" src="https://github.com/SamurAIGPT/privateGPT/assets/4326215/76e24cd4-a890-4253-bb87-098c4f1328fd">
+Document QA pipeline using SentenceTransformers embeddings and local LLMs - private and secure.
+Original pipeline from [imartinez](https://github.com/imartinez) and UI from [SamurAI](https://github.com/SamurAIGPT).
 
 ## Contents
 
-* [Getting started](#getting-started)
+* [Difference](#difference)
 * [Requirements](#requirements)
 * [How to run](#how-to-run)
-* [Support](#support)
-* [Data](#data)
+* [Supported Documents](#supported-documents)
 * [Check repos](#check-repos)
 
-## Getting started
+## Difference
 
-Code is up, ⭐ (Star) the repo meanwhile to receive updates
+![UI](ui.png)
 
-Follow [Anil Chandra Naidu Matcha](https://twitter.com/matchaman11) & [Ankur Singh](https://twitter.com/ankur_maker) on twitter for updates
+* Retrieve a list of documents
+* Delete documents
+* View which part of the source documents the LLM referred to
+* Library versions up to date with [original pipeline](https://github.com/imartinez/privateGPT) as of 3rd July 2023
 
 ## Requirements
 
@@ -53,29 +54,23 @@ Follow [Anil Chandra Naidu Matcha](https://twitter.com/matchaman11) & [Ankur Sin
 
 5. Now run any query on your data. Data querying is slow and thus wait for sometime
 
-## Support
-
-Join our discord <https://discord.gg/A6EzvsKX4u> to get support
-
-## Data
+## Supported Documents
 
 The supported extensions for documents are:
 
 * .csv: CSV,
-* .docx: Word Document,
+* .doc/.docx: Word Document,
 * .enex: EverNote,
 * .eml: Email,
 * .epub: EPub,
 * .html: HTML File,
 * .md: Markdown,
-* .msg: Outlook Message,
 * .odt: Open Document Text,
 * .pdf: Portable Document Format (PDF),
-* .pptx : PowerPoint Document,
+* .ppt/.pptx : PowerPoint Document,
 * .txt: Text file (UTF-8),
 
 ## Check repos
 
-* [Langchain Course](https://github.com/SamurAIGPT/langchain-course)
-* [ChatGPT Developer Plugins](https://github.com/SamurAIGPT/ChatGPT-Developer-Plugins)
-* [Camel AGI](https://github.com/SamurAIGPT/Camel-AutoGPT)
+* [Original Pipeline](https://github.com/imartinez/privateGPT)
+* [Original UI](https://github.com/SamurAIGPT/privateGPT)

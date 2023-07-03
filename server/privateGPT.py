@@ -14,7 +14,8 @@ import time
 from langchain.document_loaders import (
     CSVLoader,
     EverNoteLoader,
-    PyMuPDFLoader,
+    PDFMinerLoader,
+    # PyMuPDFLoader,
     TextLoader,
     UnstructuredEmailLoader,
     UnstructuredEPubLoader,
@@ -77,7 +78,8 @@ LOADER_MAPPING = {
     ".html": (UnstructuredHTMLLoader, {}),
     ".md": (UnstructuredMarkdownLoader, {}),
     ".odt": (UnstructuredODTLoader, {}),
-    ".pdf": (PyMuPDFLoader, {}),
+    ".pdf": (PDFMinerLoader, {}),
+    # ".pdf": (PyMuPDFLoader, {}),
     ".ppt": (UnstructuredPowerPointLoader, {}),
     ".pptx": (UnstructuredPowerPointLoader, {}),
     ".txt": (TextLoader, {"encoding": "utf8"}),
@@ -133,7 +135,7 @@ def ingest_data():
 @app.route('/get_answer', methods=['POST'])
 def get_answer():
     query = request.json
-    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
+    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name, cache_folder='models')
     db = Chroma(persist_directory=persist_directory, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
     # retriever = db.as_retriever() # Took 862.4994068145752 seconds.
     target_source_chunks = int(os.environ.get('TARGET_SOURCE_CHUNKS',4))
